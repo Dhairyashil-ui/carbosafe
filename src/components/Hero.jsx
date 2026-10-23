@@ -102,17 +102,11 @@ export default function Hero({ onOpenModal, scrolled, onExploreProjects }) {
   }, []);
 
   return (
-    <section id="hero" className={`hero-stage ${scrolled ? 'scrolled' : ''}`}>
+    <section id="hero" className="hero-stage">
       
       {/* Background 3D WebGL Carbon Biosphere Globe */}
       <div className="hero-video-wrapper">
         <CarbonGlobeCanvas scrolled={scrolled} />
-        
-        {/* Animated White Cover Applied with Slow Motion & Delay on Scroll */}
-        <div className={`hero-white-cover ${scrolled ? 'active' : ''}`}></div>
-
-        {/* Shaded White Bottom Transition */}
-        <div className={`hero-bottom-fade ${scrolled ? 'active' : ''}`}></div>
       </div>
 
       {/* Hero Editorial Stage Container: Holds Left and Right Parallel at Top */}

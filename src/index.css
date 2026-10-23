@@ -432,7 +432,6 @@ a:hover {
   position: sticky;
   top: 0;
   width: 100%;
-  height: 100vh;
   min-height: 100vh;
   background: #000000;
   overflow: hidden;
@@ -441,7 +440,6 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: background-color 2.0s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-video-wrapper {
@@ -455,72 +453,17 @@ a:hover {
   pointer-events: auto;
 }
 
-.hero-white-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ffffff !important;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 2;
-  transition: opacity 2.0s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-white-cover.active,
-.hero-stage.scrolled .hero-white-cover {
-  opacity: 1 !important;
-  background: #ffffff !important;
-}
-
-.hero-stage.scrolled {
-  background: #ffffff !important;
-  transition: background-color 2.0s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-stage.scrolled .hero-video-wrapper canvas,
-.hero-stage.scrolled .carbon-globe-canvas-container {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: opacity 2.0s cubic-bezier(0.16, 1, 0.3, 1), visibility 2.0s ease !important;
-}
-
-.hero-bottom-fade {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 110px;
-  background: linear-gradient(to bottom, 
-    rgba(255, 255, 255, 0) 0%, 
-    rgba(255, 255, 255, 0.18) 35%, 
-    rgba(255, 255, 255, 0.65) 70%, 
-    rgba(255, 255, 255, 0.95) 90%, 
-    #ffffff 100%
-  );
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0;
-  transition: opacity 2.0s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-bottom-fade.active {
-  opacity: 1;
-}
-
-/* Editorial Hero Stage Layout */
+/* Editorial Hero Stage Layout - Centered with proper header clearance (Never cut off) */
 .hero-editorial-stage {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
+  position: relative;
   width: 100%;
-  padding: 0 clamp(20px, 3.8vw, 60px);
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 115px clamp(20px, 3.8vw, 60px) 50px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   z-index: 10;
   pointer-events: none;
 }
@@ -530,7 +473,7 @@ a:hover {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: 8px;
+  gap: 12px;
   pointer-events: none;
   max-width: 600px;
 }
@@ -548,14 +491,6 @@ a:hover {
   color: #34d399;
   box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
   pointer-events: auto;
-  transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-stage.scrolled .hero-eyebrow-pill {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(16, 185, 129, 0.3);
-  color: var(--carbosafe-green-dark);
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
 }
 
 .pulse-green-dot {
@@ -591,15 +526,6 @@ a:hover {
   line-height: 1.15;
   color: #ffffff;
   text-shadow: 0 4px 32px rgba(0, 0, 0, 0.95), 0 0 40px rgba(16, 185, 129, 0.35);
-  transition: color 2.0s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-stage.scrolled .hero-line-intelligence,
-.hero-stage.scrolled .hero-line-behind,
-.hero-stage.scrolled .hero-line-modern,
-.hero-stage.scrolled .hero-line-triohms {
-  color: #0f172a;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
 }
 
 .type-caret {
@@ -625,7 +551,6 @@ a:hover {
   border-radius: 0 12px 12px 0;
   max-width: 520px;
   pointer-events: auto;
-  transition: background 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-mission-note p {
@@ -633,15 +558,6 @@ a:hover {
   font-size: 13.5px;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.5;
-  transition: color 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-stage.scrolled .hero-mission-note {
-  background: rgba(255, 255, 255, 0.85);
-}
-
-.hero-stage.scrolled .hero-mission-note p {
-  color: var(--text-secondary);
 }
 
 /* Right Corner Block */
