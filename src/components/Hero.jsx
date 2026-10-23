@@ -141,7 +141,7 @@ export default function Hero({ onOpenModal, scrolled, onExploreProjects }) {
 
           {/* Line 3: "Carbon Footprints with AI" */}
           <div className="hero-typography-line hero-line-modern">
-            <span className="text-gradient-emerald">{text3}</span>
+            <span>{text3}</span>
             {activeStepLeft === 3 && <span className="type-caret" />}
           </div>
 
